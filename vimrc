@@ -80,7 +80,7 @@ if expand("%:e") == "py"
 	" 程序片断
 	iab <expr> dtsss strftime("%F")
 	iab <expr> foutsss expand("%")
-	imap <F11> #!/usr/bin/env python<cr># coding=utf-8<cr>#--------------------------------------------------------------------------<cr># 文件名:       foutsss <cr># 说明：        目的、作用说明<cr>#<cr># 版本：        0.01<cr># 作者：        xiao<cr>#<cr># 创建时间：    dtsss <cr># 许可证：      Apache License V2.0<cr>#--------------------------------------------------------------------------<cr><cr># vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:<esc>kO<cr>
+	imap <F11> # -*- coding: utf-8 -*-<cr>#--------------------------------------------------------------------------<cr># 文件名:       foutsss <cr># 说明：        目的、作用说明<cr>#<cr># 版本：        0.01<cr># 作者：        xiao<cr>#<cr># 创建时间：    dtsss <cr># 许可证：      Apache License V2.0<cr>#--------------------------------------------------------------------------<cr><cr># vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:<esc>kO<cr>
 
 	imap <F9> <esc>0/def <cr>wywo<cr><backspace>#------------------------------------------ End def <esc>p:nohls<cr>a()<esc>2ko"""<cr>"""<esc>O
 	"imap <F9> <esc>o<backspace>#------------------------------------------ End def <esc>0?def <cr>wyw/#------------------------------------------ End def<cr>$p:nohls<cr>a()<cr><cr><esc>3kO## 方法注释<cr>#<cr>#  @param<cr>#  @return<cr>#<esc>jzzo
@@ -88,16 +88,15 @@ if expand("%:e") == "py"
 	imap <F10> <esc>0/class <cr>wywo<cr><backspace>#-------------------------------------------------- End class <esc>p:nohls<cr><esc>2ko"""<cr>"""<esc>O
 	"imap <F10> <esc>o<backspace>#------------------------------------------------------ End class <esc>0?class <cr>wyw/#------------------------------------------------------ End class<cr>$p:nohls<cr>a()<cr><cr><esc>3kO## 类注释<cr>#<esc>jo<cr>
 
-	nmap <F5> :w<cr>:! python %
+	nmap <F5> :w<cr>:!python %
 
 endif
-nmap <C-n> ^x
 
 " 快捷键
 imap { {}<esc>i
-"imap } <c-r>=ClosePair('}')<CR>
+imap } <c-r>=ClosePair('}')<CR>
 imap ( ()<ESC>i
-"imap ) <c-r>=ClosePair(')')<CR>
+imap ) <c-r>=ClosePair(')')<CR>
 imap [ []<ESC>i
 imap ] <c-r>=ClosePair(']')<CR>
 
