@@ -8,7 +8,7 @@ set encoding=utf-8                " 设置编码为utf-8
 "hi DiffChange term=bold ctermbg=13 guibg=darkmagenta
 "hi SpellBad term=reverse ctermbg=9 gui=undercurl guisp=Red
 "hi SpellRare term=reverse ctermbg=13 gui=undercurl guisp=Magenta
-"hi Pmenu ctermbg=13 guifg=#c0c0c0 guibg=#404080
+hi Pmenu ctermbg=4 guifg=#c0c0c0 guibg=#404080
 hi PmenuSel ctermbg=1 guifg=#c0c0c0 guibg=#2050d0
 
 "if has("gui_macvim")
@@ -92,21 +92,23 @@ if expand("%:e") == "py"
 
 endif
 
-" 快捷键
-imap { {}<esc>i
-imap } <c-r>=ClosePair('}')<CR>
-imap ( ()<ESC>i
-imap ) <c-r>=ClosePair(')')<CR>
-imap [ []<ESC>i
-imap ] <c-r>=ClosePair(']')<CR>
+imap {<cr> {}<esc>i<cr><cr><esc>ka<tab>
 
-function ClosePair(char)
-	if getline('.')[col('.') - 1] == a:char
-		return "\<Right>"
-	else
-		return a:char
-	endif
-endf
+" 快捷键
+"imap { {}<esc>i
+"imap } <c-r>=ClosePair('}')<CR>
+"imap ( ()<ESC>i
+"imap ) <c-r>=ClosePair(')')<CR>
+"imap [ []<ESC>i
+"imap ] <c-r>=ClosePair(']')<CR>
+
+"function ClosePair(char)
+	"if getline('.')[col('.') - 1] == a:char
+		"return "\<Right>"
+	"else
+		"return a:char
+	"endif
+"endf
 
 au BufNewFile,BufRead *.ini,*/.hgrc,*/.hg/hgrc setf ini
 " TxtBrowser          高亮TXT文本文件
