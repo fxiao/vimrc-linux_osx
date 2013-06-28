@@ -8,8 +8,8 @@ set encoding=utf-8                " 设置编码为utf-8
 "hi DiffChange term=bold ctermbg=13 guibg=darkmagenta
 "hi SpellBad term=reverse ctermbg=9 gui=undercurl guisp=Red
 "hi SpellRare term=reverse ctermbg=13 gui=undercurl guisp=Magenta
-hi Pmenu ctermbg=4 guifg=#c0c0c0 guibg=#404080
-hi PmenuSel ctermbg=1 guifg=#c0c0c0 guibg=#2050d0
+hi Pmenu ctermbg=6 guifg=#c0c0c0 guibg=#404080
+hi PmenuSel ctermbg=5 guifg=#c0c0c0 guibg=#2050d0
 
 "if has("gui_macvim")
 	"set go=aAce
@@ -52,10 +52,10 @@ syntax on
 
 " 映射
 nmap tl :Tlist<cr>
-"let Tlist_Show_One_File = 1
-let Tlist_Exit_OnlyWindow=1
-let Tlist_Use_Right_Window=1
-"let Tlist_Auto_Open=1
+let Tlist_Show_One_File=1  " 设置为1。只显示一个文件中的tag；
+let Tlist_Exit_OnlyWindow=1 " 设置为1，taglist窗口是最后一个窗口时退出VIM
+let Tlist_Use_Right_Window=1 " 设置为1，窗口出现在右侧
+"let Tlist_Auto_Open=1 " 
 "let Tlist_File_Fold_Auto_Close=1
 
 let mapleader=","
@@ -67,8 +67,10 @@ let NERDChristmasTree=1
 let NERDTreeAutoCenter=1
 let NERDTreeCaseSensitiveSort=0
 let NERDTreeHighlightCursorline=1
+let NERDTreeShowLineNumbers=1
 
 nmap nt :NERDTreeToggle<cr>
+nmap <F2> :NERDTreeMirror<cr>
 
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_auto_select = 1
@@ -80,12 +82,12 @@ if expand("%:e") == "py"
 	" 程序片断
 	iab <expr> dtsss strftime("%F")
 	iab <expr> foutsss expand("%")
-	imap <F11> # -*- coding: utf-8 -*-<cr>#--------------------------------------------------------------------------<cr># 文件名:       foutsss <cr># 说明：        目的、作用说明<cr>#<cr># 版本：        0.01<cr># 作者：        xiao<cr>#<cr># 创建时间：    dtsss <cr># 许可证：      Apache License V2.0<cr>#--------------------------------------------------------------------------<cr><cr># vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:<esc>kO<cr>
+	imap <F11> # -*- coding: utf-8 -*-<cr>#--------------------------------------------------------------------------<cr># @brief      目的、作用说明<cr>#<cr># @version    0.01<cr># @author     xiao <heyun51@gmail.com> <cr>#<cr># @created    dtsss <cr># @license    Apache License V2.0<cr>#--------------------------------------------------------------------------<cr><cr># vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:<esc>kO<cr>
 
-	imap <F9> <esc>0/def <cr>wywo<cr><backspace>#------------------------------------------ End def <esc>p:nohls<cr>a()<esc>2ko"""<cr>"""<esc>O
+	imap <F9> <esc>?def <cr>wywo<cr><backspace>#------------------------------------------ End def <esc>p:nohls<cr>a()<esc>2ko
 	"imap <F9> <esc>o<backspace>#------------------------------------------ End def <esc>0?def <cr>wyw/#------------------------------------------ End def<cr>$p:nohls<cr>a()<cr><cr><esc>3kO## 方法注释<cr>#<cr>#  @param<cr>#  @return<cr>#<esc>jzzo
 
-	imap <F10> <esc>0/class <cr>wywo<cr><backspace>#-------------------------------------------------- End class <esc>p:nohls<cr><esc>2ko"""<cr>"""<esc>O
+	imap <F10> <esc>?class <cr>wywo<cr><backspace>#-------------------------------------------------- End class <esc>p:nohls<cr><esc>2ko
 	"imap <F10> <esc>o<backspace>#------------------------------------------------------ End class <esc>0?class <cr>wyw/#------------------------------------------------------ End class<cr>$p:nohls<cr>a()<cr><cr><esc>3kO## 类注释<cr>#<esc>jo<cr>
 
 	nmap <F5> :w<cr>:!python %
@@ -110,7 +112,8 @@ imap {<cr> {}<esc>i<cr><cr><esc>ka<tab>
 	"endif
 "endf
 
-au BufNewFile,BufRead *.ini,*/.hgrc,*/.hg/hgrc setf ini
+au BufNewFile,BufRead */.hgrc,*/.hg/hgrc setf ini
+au BufNewFile,BufRead *.tpl,*.htm,*.mako setf html
 " TxtBrowser          高亮TXT文本文件
 au BufRead,BufNewFile *.txt setlocal ft=txt
 
@@ -150,6 +153,6 @@ nmap <S-F4> :VimwikiAll2HTML<cr>
 nmap <F4> :Vimwiki2HTML<cr>
 map <leader>tt <Plug>VimwikiToggleListItem
 
-let VIMPRESS=[{'username':'xiao',
-			  \'password':'xMCD49jHLhbVfNYn',
-			  \'blog_url':'http://erp-ec.com/'}]
+"let VIMPRESS=[{'username':'xiao',
+			  "\'password':'xMCD49jHLhbVfNYn',
+			  "\'blog_url':'http://erp-ec.com/'}]
