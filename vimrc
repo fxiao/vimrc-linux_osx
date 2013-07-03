@@ -50,13 +50,17 @@ set ruler                         " 显示当前光标位置
 syntax enable                     " 语法高亮 
 syntax on
 
-" 映射
-nmap tl :Tlist<cr>
-let Tlist_Show_One_File=1  " 设置为1。只显示一个文件中的tag；
-let Tlist_Exit_OnlyWindow=1 " 设置为1，taglist窗口是最后一个窗口时退出VIM
-let Tlist_Use_Right_Window=1 " 设置为1，窗口出现在右侧
+" taglist
+"nmap tl :Tlist<cr>
+"let Tlist_Show_One_File=1  " 设置为1。只显示一个文件中的tag；
+"let Tlist_Exit_OnlyWindow=1 " 设置为1，taglist窗口是最后一个窗口时退出VIM
+"let Tlist_Use_Right_Window=1 " 设置为1，窗口出现在右侧
 "let Tlist_Auto_Open=1 " 
 "let Tlist_File_Fold_Auto_Close=1
+
+" tagbar
+nmap tl :TagbarToggle<CR>
+let g:tagbar_width = 25
 
 let mapleader=","
 

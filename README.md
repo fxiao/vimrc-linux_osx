@@ -11,7 +11,7 @@ vimrc-linux_osx
 * neocomplcache
 * NERD_commenter
 * NERD_tree
-* taglist
+* TagBar
 * txtbrowser
 * vimwiki
 * voom
