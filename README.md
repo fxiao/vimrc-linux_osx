@@ -16,3 +16,6 @@ vimrc-linux_osx
 * vimwiki
 * voom
 * zencoding
+* markdown
+* textile
+* debugger
