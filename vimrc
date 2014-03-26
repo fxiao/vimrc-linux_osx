@@ -33,7 +33,6 @@ set textwidth=0
 set sw=4
 set tabstop=4
 set softtabstop=4
-set shiftwidth=4
 set autoindent                    " 新行时自动缩进 
 set backspace=indent,eol,start    " 退格键何时可以删除光标之前的字符
 set expandtab
@@ -75,8 +74,8 @@ let g:neocomplcache_enable_auto_select = 1
 let g:neocomplcache_enable_auto_complete = 1
 "let g:neocomplcache_disable_auto_complete = 1
 
-" 判断文件类型
-if expand("%:e") == "py"
+" python 专用
+function PyType()
 	" 程序片断
 	iab <expr> dtsss strftime("%F")
 	iab <expr> foutsss expand("%")
@@ -90,7 +89,9 @@ if expand("%:e") == "py"
 
 	nmap <F5> :w<cr>:!python %
 
-endif
+endf
+
+au FileType python call PyType()
 
 imap {<cr> {}<esc>i<cr><cr><esc>ka<tab>
 
