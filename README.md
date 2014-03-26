@@ -13,7 +13,6 @@ vimrc-linux_osx
 * NERD_tree
 * TagBar
 * txtbrowser
-* vimwiki
 * voom
 * zencoding
 * markdown
