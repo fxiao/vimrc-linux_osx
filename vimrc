@@ -94,23 +94,8 @@ endif
 
 imap {<cr> {}<esc>i<cr><cr><esc>ka<tab>
 
-" 快捷键
-"imap { {}<esc>i
-"imap } <c-r>=ClosePair('}')<CR>
-"imap ( ()<ESC>i
-"imap ) <c-r>=ClosePair(')')<CR>
-"imap [ []<ESC>i
-"imap ] <c-r>=ClosePair(']')<CR>
-
-"function ClosePair(char)
-	"if getline('.')[col('.') - 1] == a:char
-		"return "\<Right>"
-	"else
-		"return a:char
-	"endif
-"endf
-
 au BufNewFile,BufRead */.hgrc,*/.hg/hgrc setf ini
 au BufNewFile,BufRead *.tpl,*.htm,*.mako setf html
+au FileType html setlocal sw=2
 " TxtBrowser          高亮TXT文本文件
 au BufRead,BufNewFile *.txt setlocal ft=txt
