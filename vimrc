@@ -30,7 +30,7 @@ set cindent
 set smartindent
 " tab处理
 set textwidth=0
-set sw=4
+set shiftwidth=4
 set tabstop=4
 set softtabstop=4
 set autoindent                    " 新行时自动缩进 
@@ -97,6 +97,6 @@ imap {<cr> {}<esc>i<cr><cr><esc>ka<tab>
 
 au BufNewFile,BufRead */.hgrc,*/.hg/hgrc setf ini
 au BufNewFile,BufRead *.tpl,*.htm,*.mako setf html
-au FileType html setlocal sw=2
+au FileType html set shiftwidth=2 | set tabstop=2 | set softtabstop=2
 " TxtBrowser          高亮TXT文本文件
 au BufRead,BufNewFile *.txt setlocal ft=txt
