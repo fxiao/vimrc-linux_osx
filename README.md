@@ -6,6 +6,11 @@ vimrc-linux_osx
 使用
 ----
 
+    vim
+    # 在VIM 里面运行
+    :PluginInstall
+    
+    vim +PluginInstall +qall
     cd ~/.vim/bundle/YouCompleteMe
     ./install.sh
 
