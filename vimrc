@@ -2,7 +2,60 @@ set nocompatible                  " 关闭Vi兼容模式
 set langmenu=zh_CN.utf-8
 set helplang=cn                   " 帮助文件为中文
 set encoding=utf-8                " 设置编码为utf-8
+filetype off                  " required
 
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'tpope/vim-fugitive'
+" plugin from http://vim-scripts.org/vim/scripts.html
+Plugin 'L9'
+" Git plugin not hosted on GitHub
+Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+"Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Avoid a name conflict with L9
+"Plugin 'user/L9', {'name': 'newL9'}
+
+" 个人的插件
+Plugin 'git://github.com/altercation/vim-colors-solarized.git'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'The-NERD-Commenter'
+Plugin 'The-NERD-tree'
+Plugin 'TagBar'
+Plugin 'txtbrowser'
+Plugin 'markdown'
+Plugin 'git://github.com/emmetio/emmet.git'
+Plugin 'git://github.com/Lokaltog/vim-powerline.git'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+" 个人
 " 颜色设置
 "hi DiffAdd ctermbg=4
 "hi DiffChange term=bold ctermbg=13
@@ -51,14 +104,24 @@ syntax on
 set background=dark
 colorscheme solarized
 
+" YCM
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_seed_identifiers_with_syntax = 1
+let g:ycm_confirm_extra_conf = 0
+
+" vim-powerline
+set laststatus=2
+"set t_Co=256
+let g:Powerline_symbols='unicode'
+set encoding=utf8
+
 " tagbar
 nmap tl :TagbarToggle<CR>
 let g:tagbar_width = 25
 
 let mapleader=","
 
-"自动补全
-filetype plugin indent on         " 自动识别文件类型，用文件类型plugin脚本，使用缩进定义文件 
 "NERD Tree
 let NERDChristmasTree=1
 let NERDTreeAutoCenter=1
@@ -100,3 +163,4 @@ au BufNewFile,BufRead *.tpl,*.htm,*.mako setf html
 au FileType html set shiftwidth=2 | set tabstop=2 | set softtabstop=2
 " TxtBrowser          高亮TXT文本文件
 au BufRead,BufNewFile *.txt setlocal ft=txt
+
