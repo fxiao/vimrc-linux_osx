@@ -6,6 +6,8 @@ vimrc-linux_osx
 使用
 ----
 
+    mkdir ~/.vim/bundle
+    git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     vim
     # 在VIM 里面运行
     :PluginInstall
