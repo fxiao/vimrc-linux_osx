@@ -97,6 +97,7 @@ set completeopt=longest,menu
 "
 "" 高亮
 set showcmd                       " 显示完整的命令已经完成的部分 
+set cursorline                " 当前行高亮
 "set paste
 set ruler                         " 显示当前光标位置 
 syntax enable                     " 语法高亮 
@@ -125,7 +126,7 @@ let mapleader=","
 "NERD Tree
 let NERDChristmasTree=1
 let NERDTreeAutoCenter=1
-let NERDTreeCaseSensitiveSort=0
+let NERDTreeCaseSensitiveSort=1
 let NERDTreeHighlightCursorline=1
 let NERDTreeShowLineNumbers=1
 
