@@ -38,7 +38,7 @@ Plugin 'The-NERD-tree'
 Plugin 'TagBar'
 Plugin 'txtbrowser'
 Plugin 'markdown'
-Plugin 'git://github.com/emmetio/emmet.git'
+Plugin 'git://github.com/mattn/emmet-vim.git'
 Plugin 'git://github.com/Lokaltog/vim-powerline.git'
 
 " All of your Plugins must be added before the following line
