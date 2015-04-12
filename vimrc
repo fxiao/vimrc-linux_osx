@@ -36,8 +36,9 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'The-NERD-Commenter'
 Plugin 'The-NERD-tree'
 Plugin 'TagBar'
-Plugin 'txtbrowser'
+"Plugin 'txtbrowser' " 依赖 taglist
 Plugin 'markdown'
+Plugin 'git://github.com/klen/python-mode.git'
 Plugin 'git://github.com/mattn/emmet-vim.git'
 Plugin 'git://github.com/Lokaltog/vim-powerline.git'
 
@@ -123,6 +124,7 @@ nmap tl :TagbarToggle<CR>
 let g:tagbar_width = 25
 
 let mapleader=","
+let g:pymode_folding = 0
 
 "NERD Tree
 let NERDChristmasTree=1
@@ -144,15 +146,16 @@ function PyType()
 	" 程序片断
 	iab <expr> dtsss strftime("%F")
 	iab <expr> foutsss expand("%")
-	imap <F11> <esc>ggO# -*- coding: utf-8 -*-<cr>#--------------------------------------------------------------------------<cr># @brief      目的、作用说明<cr>#<cr># @version    0.01<cr># @author     xiao <heyun51@gmail.com> <cr>#<cr># @created    dtsss <cr># @license    Apache License V2.0<cr>#--------------------------------------------------------------------------<cr><cr># vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:<esc>kO<cr>
+	imap <F11> <esc>ggO# -*- coding: utf-8 -*-<cr>'''<cr># @brief      目的、作用说明<cr>#<cr># @version    0.01<cr># @author     xiao <heyun51@gmail.com> <cr>#<cr># @created    dtsss <cr># @license    Apache License V2.0<cr>'''<cr><cr># vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:<esc>kO<cr>
 
 	nmap <F12> ggO# -*- coding: utf-8 -*-<esc>Go<esc>d0i<cr><cr># vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4<esc>
 
-	imap <F9> <esc>$?def <cr>wywo<cr><backspace>#------------------------------------------ End def <esc>p:nohls<cr>a()<esc>2ko
+	imap <F9> <esc>$?def <cr>wywo<cr><backspace># ------------------------------------------ End def <esc>p:nohls<cr>a()<esc>2ko
 
-	imap <F10> <esc>$?class <cr>wywo<cr><backspace>#-------------------------------------------------- End class <esc>p:nohls<cr><esc>2ko""" """<cr>
+	imap <F10> <esc>$?class <cr>wywo<cr><backspace># -------------------------------------------------- End class <esc>p:nohls<cr><esc>2ko""" """<cr>
 
-	nmap <F5> :w<cr>:!python %
+	nmap <F5> :PymodeLint
+    nmap <F6> :PymodeLintAuto
 
 endf
 
