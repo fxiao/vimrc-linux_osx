@@ -152,7 +152,7 @@ function PyType()
 
 	imap <F9> <esc>$?def <cr>wywo<cr><backspace># ------------------------------------------ End def <esc>p:nohls<cr>a()<esc>2ko
 
-	imap <F10> <esc>$?class <cr>wywo<cr><backspace># -------------------------------------------------- End class <esc>p:nohls<cr><esc>2ko""" """<cr>
+	imap <F10> <esc>$?class <cr>wywo<cr><backspace># -------------------------------------------------- End class <esc>p:nohls<cr><esc>2ko
 
 	nmap <F5> :PymodeLint
     nmap <F6> :PymodeLintAuto
