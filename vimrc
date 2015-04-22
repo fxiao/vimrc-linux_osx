@@ -31,8 +31,8 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 
 " 个人的插件
 Plugin 'git://github.com/altercation/vim-colors-solarized.git'
-Plugin 'Valloric/YouCompleteMe'
-"Plugin 'Neocomplcache'  " 当没办法使用 YouCompleteMe 时，使用
+"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Neocomplcache'  " 当没办法使用 YouCompleteMe 时，使用
 Plugin 'The-NERD-Commenter'
 Plugin 'The-NERD-tree'
 Plugin 'TagBar'
@@ -108,10 +108,10 @@ set background=dark
 colorscheme solarized
 
 " YCM
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
-let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_seed_identifiers_with_syntax = 1
-let g:ycm_confirm_extra_conf = 0
+let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_collect_identifiers_from_tags_files=1
+let g:ycm_seed_identifiers_with_syntax=1
+let g:ycm_confirm_extra_conf=0
 
 " vim-powerline
 set laststatus=2
@@ -121,10 +121,10 @@ set encoding=utf8
 
 " tagbar
 nmap tl :TagbarToggle<CR>
-let g:tagbar_width = 25
+let g:tagbar_width=25
 
 let mapleader=","
-let g:pymode_folding = 0
+let g:pymode_folding=0
 
 "NERD Tree
 let NERDChristmasTree=1
@@ -136,10 +136,10 @@ let NERDTreeShowLineNumbers=1
 nmap nt :NERDTreeToggle<cr>
 nmap <F2> :NERDTreeMirror<cr>
 
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_enable_auto_select = 1
-let g:neocomplcache_enable_auto_complete = 1
-"let g:neocomplcache_disable_auto_complete = 1
+let g:neocomplcache_enable_at_startup=1
+let g:neocomplcache_enable_auto_select=1
+let g:neocomplcache_enable_auto_complete=1
+"let g:neocomplcache_disable_auto_complete=1
 
 " python 专用
 function PyType()
