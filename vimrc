@@ -132,6 +132,7 @@ let NERDTreeAutoCenter=1
 let NERDTreeCaseSensitiveSort=1
 let NERDTreeHighlightCursorline=1
 let NERDTreeShowLineNumbers=1
+let NERDTreeIgnore=['\.pyc$']
 
 nmap nt :NERDTreeToggle<cr>
 nmap <F2> :NERDTreeMirror<cr>
