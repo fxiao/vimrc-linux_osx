@@ -38,12 +38,14 @@ Plugin 'The-NERD-tree'
 Plugin 'TagBar'
 "Plugin 'txtbrowser' " 依赖 taglist
 Plugin 'markdown'
+
 Plugin 'git://github.com/klen/python-mode.git'
 Plugin 'git://github.com/mattn/emmet-vim.git'
 Plugin 'git://github.com/Lokaltog/vim-powerline.git'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
+
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
@@ -108,10 +110,10 @@ set background=dark
 colorscheme solarized
 
 " YCM
-let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
-let g:ycm_collect_identifiers_from_tags_files=1
-let g:ycm_seed_identifiers_with_syntax=1
-let g:ycm_confirm_extra_conf=0
+"let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+"let g:ycm_collect_identifiers_from_tags_files=1
+"let g:ycm_seed_identifiers_with_syntax=1
+"let g:ycm_confirm_extra_conf=0
 
 " vim-powerline
 set laststatus=2
@@ -124,7 +126,10 @@ nmap tl :TagbarToggle<CR>
 let g:tagbar_width=25
 
 let mapleader=","
-let g:pymode_folding=0
+
+" Pymode
+let g:pymode_folding=0   " 关闭功能：Python折叠
+let g:pymode_lint_on_write=0  " 关闭功能：如果文件被修改, 保存时检查代码
 
 "NERD Tree
 let NERDChristmasTree=1
