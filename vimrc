@@ -42,6 +42,9 @@ Plugin 'markdown'
 Plugin 'git://github.com/klen/python-mode.git'
 Plugin 'git://github.com/mattn/emmet-vim.git'
 Plugin 'git://github.com/Lokaltog/vim-powerline.git'
+Plugin 'git://github.com/kchmck/vim-coffee-script.git'
+
+Plugin 'fatih/vim-go'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -124,6 +127,8 @@ set encoding=utf8
 " tagbar
 nmap tl :TagbarToggle<CR>
 let g:tagbar_width=25
+let g:tagbar_show_linenumbers=2 " 行号显示方式 0:不显示 1:绝对行号 2:相对行号 -1:使用全局设置
+let g:tagbar_autoclose=1 " 跳转Tag后自动关闭
 
 let mapleader=","
 
@@ -174,4 +179,49 @@ au BufNewFile,BufRead *.tpl,*.htm,*.mako setf html
 au FileType html set shiftwidth=2 | set tabstop=2 | set softtabstop=2
 " TxtBrowser          高亮TXT文本文件
 au BufRead,BufNewFile *.txt setlocal ft=txt
+
+" golang 配置
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_interfaces = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+
+let g:go_fmt_command = "goimports"
+let g:go_fmt_fail_silently = 1
+let g:go_fmt_autosave = 0
+let g:go_play_open_browser = 0
+
+let g:go_bin_path = expand("~/.gotools")
+
+map <C-n> :lne<CR>
+map <C-m> :lp<CR>
+
+au FileType go nmap <leader>rt <Plug>(go-run-tab)
+au FileType go nmap <Leader>rs <Plug>(go-run-split)
+au FileType go nmap <Leader>rv <Plug>(go-run-vertical)
+
+let g:go_term_mode = "split"
+let g:go_term_enabled = 1
+
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
+
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+
+au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+au FileType go nmap <Leader>s <Plug>(go-implements)
+au FileType go nmap <Leader>i <Plug>(go-info)
+au FileType go nmap <Leader>e <Plug>(go-rename)
 
