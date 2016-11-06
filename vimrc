@@ -38,13 +38,14 @@ Plugin 'The-NERD-tree'
 Plugin 'TagBar'
 "Plugin 'txtbrowser' " 依赖 taglist
 Plugin 'markdown'
+Plugin 'git://github.com/Raimondi/delimitMate.git'
 
-Plugin 'git://github.com/klen/python-mode.git'
+"Plugin 'git://github.com/klen/python-mode.git'
 Plugin 'git://github.com/mattn/emmet-vim.git'
 Plugin 'git://github.com/Lokaltog/vim-powerline.git'
 Plugin 'git://github.com/kchmck/vim-coffee-script.git'
 
-Plugin 'fatih/vim-go'
+"Plugin 'fatih/vim-go'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
