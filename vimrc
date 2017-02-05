@@ -38,12 +38,17 @@ Plugin 'The-NERD-tree'
 Plugin 'TagBar'
 "Plugin 'txtbrowser' " 依赖 taglist
 Plugin 'markdown'
-Plugin 'git://github.com/Raimondi/delimitMate.git'
+"Plugin 'git://github.com/Raimondi/delimitMate.git'
 
 "Plugin 'git://github.com/klen/python-mode.git'
 Plugin 'git://github.com/mattn/emmet-vim.git'
 Plugin 'git://github.com/Lokaltog/vim-powerline.git'
-Plugin 'git://github.com/kchmck/vim-coffee-script.git'
+"Plugin 'git://github.com/kchmck/vim-coffee-script.git'
+Plugin 'git://github.com/tpope/vim-haml.git'
+Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'groenewege/vim-less'
+Plugin 'git://github.com/hail2u/vim-css3-syntax.git'
+Plugin 'posva/vim-vue'
 
 "Plugin 'fatih/vim-go'
 
@@ -171,13 +176,17 @@ function PyType()
 
 endf
 
-au FileType python call PyType()
+au BufNewFile,BufRead *.py call PyType()
 
 imap {<cr> {}<esc>i<cr><cr><esc>ka<tab>
 
+nnoremap <Leader>m :w <BAR> !lessc % > %:t:r.css<CR><space>
+au BufRead,BufNewFile *.scss set filetype=scss.css
+au FileType scss set iskeyword+=-
+
 au BufNewFile,BufRead */.hgrc,*/.hg/hgrc setf ini
 au BufNewFile,BufRead *.tpl,*.htm,*.mako setf html
-au FileType html set shiftwidth=2 | set tabstop=2 | set softtabstop=2
+au BufNewFile,BufRead *.tpl,*.htm,*.html,*.mako,*.js set shiftwidth=2 | set tabstop=2 | set softtabstop=2
 " TxtBrowser          高亮TXT文本文件
 au BufRead,BufNewFile *.txt setlocal ft=txt
 
