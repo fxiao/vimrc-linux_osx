@@ -1,7 +1,6 @@
 set nocompatible                  " 关闭Vi兼容模式
 set langmenu=zh_CN.utf-8
 set helplang=cn                   " 帮助文件为中文
-set encoding=utf-8                " 设置编码为utf-8
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -31,8 +30,8 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 
 " 个人的插件
 Plugin 'git://github.com/altercation/vim-colors-solarized.git'
-"Plugin 'Valloric/YouCompleteMe'
-Plugin 'Neocomplcache'  " 当没办法使用 YouCompleteMe 时，使用
+Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Neocomplcache'  " 当没办法使用 YouCompleteMe 时，使用
 Plugin 'The-NERD-Commenter'
 Plugin 'The-NERD-tree'
 Plugin 'TagBar'
@@ -50,7 +49,6 @@ Plugin 'groenewege/vim-less'
 Plugin 'git://github.com/hail2u/vim-css3-syntax.git'
 Plugin 'posva/vim-vue'
 
-"Plugin 'fatih/vim-go'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -119,10 +117,13 @@ set background=dark
 colorscheme solarized
 
 " YCM
-"let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
-"let g:ycm_collect_identifiers_from_tags_files=1
-"let g:ycm_seed_identifiers_with_syntax=1
-"let g:ycm_confirm_extra_conf=0
+let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+"let g:ycm_collect_identifiers_from_tags_files=1 " 开启 YCM 基于标签引擎
+let g:ycm_seed_identifiers_with_syntax=1 " 语法关键字补全
+let g:ycm_confirm_extra_conf=0 " 关闭加载.ycm_extra_conf.py提示
+let g:ycm_cache_omnifunc=0	" 禁止缓存匹配项,每次都重新生成匹配项
+let g:ycm_complete_in_comments = 1
+let g:ycm_collect_identifiers_from_comments_and_strings = 1
 
 " vim-powerline
 set laststatus=2
@@ -149,9 +150,10 @@ let NERDTreeCaseSensitiveSort=1
 let NERDTreeHighlightCursorline=1
 let NERDTreeShowLineNumbers=1
 let NERDTreeIgnore=['\.pyc$']
+let NERDTreeQuitOnOpen=1
 
-nmap nt :NERDTreeToggle<cr>
 nmap <F2> :NERDTreeMirror<cr>
+nmap nt :NERDTreeToggle<cr><F2>
 
 let g:neocomplcache_enable_at_startup=1
 let g:neocomplcache_enable_auto_select=1
@@ -186,54 +188,17 @@ au FileType scss set iskeyword+=-
 
 au BufNewFile,BufRead */.hgrc,*/.hg/hgrc setf ini
 au BufNewFile,BufRead *.tpl,*.htm,*.mako setf html
-au BufNewFile,BufRead *.tpl,*.htm,*.html,*.mako,*.js set shiftwidth=2 | set tabstop=2 | set softtabstop=2
+"au BufNewFile,BufRead *.tpl,*.htm,*.html,*.mako,*.js set shiftwidth=2 | set tabstop=2 | set softtabstop=2
 " TxtBrowser          高亮TXT文本文件
 au BufRead,BufNewFile *.txt setlocal ft=txt
 
-" golang 配置
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_interfaces = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
-
-let g:go_fmt_command = "goimports"
-let g:go_fmt_fail_silently = 1
-let g:go_fmt_autosave = 0
-let g:go_play_open_browser = 0
-
-let g:go_bin_path = expand("~/.gotools")
-
-map <C-n> :lne<CR>
-map <C-m> :lp<CR>
-
-au FileType go nmap <leader>rt <Plug>(go-run-tab)
-au FileType go nmap <Leader>rs <Plug>(go-run-split)
-au FileType go nmap <Leader>rv <Plug>(go-run-vertical)
-
-let g:go_term_mode = "split"
-let g:go_term_enabled = 1
-
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
-
-au FileType go nmap <leader>r <Plug>(go-run)
-au FileType go nmap <leader>b <Plug>(go-build)
-au FileType go nmap <leader>t <Plug>(go-test)
-au FileType go nmap <leader>c <Plug>(go-coverage)
-
-au FileType go nmap <Leader>ds <Plug>(go-def-split)
-au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
-au FileType go nmap <Leader>dt <Plug>(go-def-tab)
-
-au FileType go nmap <Leader>gd <Plug>(go-doc)
-au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
-
-au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
-au FileType go nmap <Leader>s <Plug>(go-implements)
-au FileType go nmap <Leader>i <Plug>(go-info)
-au FileType go nmap <Leader>e <Plug>(go-rename)
-
 let python_highlight_all = 1
 
+if has("gui_macvim")
+    set guifont=Monaco:h13
+    set transp=8
+    set transparency=6
+    set lines=52 columns=100
+    set guioptions-=r
+    set guioptions-=L
+endif
