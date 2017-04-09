@@ -35,8 +35,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'The-NERD-Commenter'
 Plugin 'The-NERD-tree'
 Plugin 'TagBar'
-"Plugin 'txtbrowser' " 依赖 taglist
-Plugin 'markdown'
+"Plugin 'markdown'
 "Plugin 'git://github.com/Raimondi/delimitMate.git'
 
 "Plugin 'git://github.com/klen/python-mode.git'
@@ -48,6 +47,8 @@ Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'groenewege/vim-less'
 Plugin 'git://github.com/hail2u/vim-css3-syntax.git'
 Plugin 'posva/vim-vue'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 
 
 " All of your Plugins must be added before the following line
@@ -178,7 +179,7 @@ function PyType()
 
 endf
 
-au BufNewFile,BufRead *.py call PyType()
+au FileType python call PyType()
 
 imap {<cr> {}<esc>i<cr><cr><esc>ka<tab>
 
@@ -186,13 +187,12 @@ nnoremap <Leader>m :w <BAR> !lessc % > %:t:r.css<CR><space>
 au BufRead,BufNewFile *.scss set filetype=scss.css
 au FileType scss set iskeyword+=-
 
-au BufNewFile,BufRead */.hgrc,*/.hg/hgrc setf ini
 au BufNewFile,BufRead *.tpl,*.htm,*.mako setf html
-"au BufNewFile,BufRead *.tpl,*.htm,*.html,*.mako,*.js set shiftwidth=2 | set tabstop=2 | set softtabstop=2
-" TxtBrowser          高亮TXT文本文件
-au BufRead,BufNewFile *.txt setlocal ft=txt
+au BufWinEnter *.tpl,*.htm,*.html,*.mako set shiftwidth=2 | set tabstop=2 | set softtabstop=2
+au BufWinLeave *.tpl,*.htm,*.html,*.mako set shiftwidth=4 | set tabstop=4 | set softtabstop=4
 
 let python_highlight_all = 1
+let g:vim_markdown_folding_disabled = 1
 
 if has("gui_macvim")
     set guifont=Monaco:h13
