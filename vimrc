@@ -187,9 +187,9 @@ nnoremap <Leader>m :w <BAR> !lessc % > %:t:r.css<CR><space>
 au BufRead,BufNewFile *.scss set filetype=scss.css
 au FileType scss set iskeyword+=-
 
-au BufNewFile,BufRead *.tpl,*.htm,*.mako setf html
-au BufWinEnter *.tpl,*.htm,*.html,*.mako set shiftwidth=2 | set tabstop=2 | set softtabstop=2
-au BufWinLeave *.tpl,*.htm,*.html,*.mako set shiftwidth=4 | set tabstop=4 | set softtabstop=4
+au BufNewFile,BufRead *.tpl,*.htm,*.mako,*.blade.php setf html
+au BufWinEnter *.tpl,*.htm,*.html,*.mako,*.blade.php set shiftwidth=2 | set tabstop=2 | set softtabstop=2
+au BufWinLeave *.tpl,*.htm,*.html,*.mako,*.blade.php set shiftwidth=4 | set tabstop=4 | set softtabstop=4
 
 let python_highlight_all = 1
 let g:vim_markdown_folding_disabled = 1
