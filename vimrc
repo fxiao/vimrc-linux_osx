@@ -121,10 +121,23 @@ colorscheme solarized
 let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 "let g:ycm_collect_identifiers_from_tags_files=1 " 开启 YCM 基于标签引擎
 let g:ycm_seed_identifiers_with_syntax=1 " 语法关键字补全
-let g:ycm_confirm_extra_conf=0 " 关闭加载.ycm_extra_conf.py提示
-let g:ycm_cache_omnifunc=0	" 禁止缓存匹配项,每次都重新生成匹配项
-let g:ycm_complete_in_comments = 1
+"let g:ycm_confirm_extra_conf=0 " 关闭加载.ycm_extra_conf.py提示
+"let g:ycm_cache_omnifunc=0	" 禁止缓存匹配项,每次都重新生成匹配项
+let g:ycm_complete_in_comments = 1 " 在注释输入中也能补全
 let g:ycm_collect_identifiers_from_comments_and_strings = 1
+let g:ycm_semantic_triggers =  {
+  \   'c' : ['->', '.'],
+  \   'objc' : ['->', '.', 're!\[[_a-zA-Z]+\w*\s', 're!^\s*[^\W\d]\w*\s',
+  \             're!\[.*\]\s'],
+  \   'ocaml' : ['.', '#'],
+  \   'cpp,objcpp' : ['->', '.', '::'],
+  \   'perl' : ['->'],
+  \   'php' : ['->', '::'],
+  \   'cs,java,javascript,typescript,d,python,perl6,scala,vb,elixir,go' : ['.'],
+  \   'ruby' : ['.', '::'],
+  \   'lua' : ['.', ':'],
+  \   'erlang' : [':'],
+  \ }
 
 " vim-powerline
 set laststatus=2
