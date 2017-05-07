@@ -32,3 +32,9 @@ vimrc-linux_osx
 * markdown
 * emmet
 * vim-powerline
+
+快捷键
+-----
+
+tl: 打开和关闭 TagBar
+nt: 打开和关闭 NERD_tree 并同步显示目录
