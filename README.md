@@ -15,15 +15,10 @@ vimrc-linux_osx
     vim
     # 在VIM 里面运行
     :PluginInstall
-    
-    vim +PluginInstall +qall
-    cd ~/.vim/bundle/YouCompleteMe
-    ./install.sh
 
 插件
 ----
-
-* YouCompleteMe
+* Neocomplcache
 * NERD_commenter
 * NERD_tree
 * TagBar
