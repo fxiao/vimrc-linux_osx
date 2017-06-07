@@ -8,7 +8,6 @@ vimrc-linux_osx
     
     cd
     git clone https://github.com/fxiao/vimrc-linux_osx.git .vim
-    ln -s .vim/vimrc ./.vimrc
     mkdir ~/.vim/bundle
     git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     
