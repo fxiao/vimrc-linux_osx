@@ -30,7 +30,7 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 
 " 个人的插件
 Plugin 'git://github.com/altercation/vim-colors-solarized.git'
-"Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 Plugin 'Neocomplcache'  " 当没办法使用 YouCompleteMe 时，使用
 Plugin 'The-NERD-Commenter'
 Plugin 'The-NERD-tree'
