@@ -30,8 +30,8 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 
 " 个人的插件
 Plugin 'git://github.com/altercation/vim-colors-solarized.git'
-Plugin 'Valloric/YouCompleteMe'
-"Plugin 'Neocomplcache'  " 当没办法使用 YouCompleteMe 时，使用
+"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Neocomplcache'  " 当没办法使用 YouCompleteMe 时，使用
 Plugin 'The-NERD-Commenter'
 Plugin 'The-NERD-tree'
 Plugin 'TagBar'
@@ -40,7 +40,8 @@ Plugin 'TagBar'
 
 "Plugin 'git://github.com/klen/python-mode.git'
 Plugin 'git://github.com/mattn/emmet-vim.git'
-Plugin 'git://github.com/Lokaltog/vim-powerline.git'
+"Plugin 'git://github.com/Lokaltog/vim-powerline.git'
+Plugin 'vim-airline/vim-airline'
 "Plugin 'git://github.com/kchmck/vim-coffee-script.git'
 Plugin 'git://github.com/tpope/vim-haml.git'
 Plugin 'cakebaker/scss-syntax.vim'
