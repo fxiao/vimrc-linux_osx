@@ -1,5 +1,6 @@
 set nocompatible                  " 关闭Vi兼容模式
 set langmenu=zh_CN.utf-8
+set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,chinese,cp936,latin1
 set helplang=cn                   " 帮助文件为中文
 filetype off                  " required
