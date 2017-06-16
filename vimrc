@@ -1,5 +1,6 @@
 set nocompatible                  " 关闭Vi兼容模式
 set langmenu=zh_CN.utf-8
+set fileencodings=ucs-bom,utf-8,chinese,cp936,latin1
 set helplang=cn                   " 帮助文件为中文
 filetype off                  " required
 
@@ -143,8 +144,7 @@ let g:ycm_semantic_triggers =  {
 " vim-powerline
 set laststatus=2
 "set t_Co=256
-let g:Powerline_symbols='unicode'
-set encoding=utf8
+"let g:Powerline_symbols='unicode'
 
 " tagbar
 nmap tl :TagbarToggle<CR>
@@ -212,7 +212,18 @@ if has("gui_macvim")
     set guifont=Monaco:h13
     set transp=8
     set transparency=6
-    set lines=52 columns=100
+    set lines=52 columns=90
+    set guioptions-=r
+    set guioptions-=L
+endif
+
+if has("gui_running")
+    source $VIMRUNTIME/delmenu.vim
+    source $VIMRUNTIME/menu.vim
+    set guifont=Monaco:h13
+    set lines=52 columns=90
+    set guioptions-=m
+    set guioptions-=T
     set guioptions-=r
     set guioptions-=L
 endif
