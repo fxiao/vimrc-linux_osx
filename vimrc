@@ -107,7 +107,7 @@ set expandtab
 "set wildmenu
 set commentstring=\ #\ %s
 "set foldlevel=0
-set clipboard+=unnamed
+"set clipboard+=unnamed " 直接 y 复制内容到系统剪切板
 set completeopt=longest,menu
 "
 "" 高亮
