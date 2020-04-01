@@ -52,6 +52,8 @@ Plugin 'git://github.com/hail2u/vim-css3-syntax.git'
 Plugin 'posva/vim-vue'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'noahfrederick/vim-laravel'
+Plugin 'mileszs/ack.vim'
 
 
 " All of your Plugins must be added before the following line
@@ -176,6 +178,10 @@ let g:neocomplcache_enable_auto_select=1
 let g:neocomplcache_enable_auto_complete=1
 "let g:neocomplcache_disable_auto_complete=1
 
+if executable('ag')
+    let g:ackprg = 'ag --vimgrep'
+endif
+
 " python 专用
 function PyType()
 	" 程序片断
@@ -203,8 +209,11 @@ au BufRead,BufNewFile *.scss set filetype=scss.css
 au FileType scss set iskeyword+=-
 
 au BufNewFile,BufRead *.tpl,*.htm,*.mako,*.blade.php setf html
-"au BufWinEnter *.tpl,*.htm,*.html,*.mako,*.blade.php,*.vue set shiftwidth=2 | set tabstop=2 | set softtabstop=2
-"au BufWinLeave *.tpl,*.htm,*.html,*.mako,*.blade.php,*.vue set shiftwidth=4 | set tabstop=4 | set softtabstop=4
+au BufWinEnter *.js,*.tpl,*.htm,*.html,*.mako,*.blade.php,*.vue set shiftwidth=2 | set tabstop=2 | set softtabstop=2
+au BufWinLeave *.js,*.tpl,*.htm,*.html,*.mako,*.blade.php,*.vue set shiftwidth=2 | set tabstop=2 | set softtabstop=2
+
+autocmd FileType vue syntax sync fromstart
+autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
 
 let python_highlight_all = 1
 let g:vim_markdown_folding_disabled = 1
