@@ -208,12 +208,13 @@ nnoremap <Leader>m :w <BAR> !lessc % > %:t:r.css<CR><space>
 au BufRead,BufNewFile *.scss set filetype=scss.css
 au FileType scss set iskeyword+=-
 
-au BufNewFile,BufRead *.tpl,*.htm,*.mako,*.blade.php setf html
-au BufWinEnter *.js,*.tpl,*.htm,*.html,*.mako,*.blade.php,*.vue set shiftwidth=2 | set tabstop=2 | set softtabstop=2
-au BufWinLeave *.js,*.tpl,*.htm,*.html,*.mako,*.blade.php,*.vue set shiftwidth=2 | set tabstop=2 | set softtabstop=2
-
 autocmd FileType vue syntax sync fromstart
 autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
+
+au BufNewFile,BufRead *.tpl,*.htm,*.mako,*.blade.php setf html
+
+au BufWinEnter *.js,*.tpl,*.htm,*.html,*.mako,*.blade.php,*.vue set shiftwidth=2 | set tabstop=2 | set softtabstop=2
+au BufWinLeave *.js,*.tpl,*.htm,*.html,*.mako,*.blade.php,*.vue set shiftwidth=4 | set tabstop=4 | set softtabstop=4
 
 let python_highlight_all = 1
 let g:vim_markdown_folding_disabled = 1
